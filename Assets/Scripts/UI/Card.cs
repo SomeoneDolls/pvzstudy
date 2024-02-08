@@ -55,6 +55,7 @@ public class Card : MonoBehaviour
         PointerEventData pointerEventData = data as PointerEventData;
         curGameObject = Instantiate(objectPrefab);
         curGameObject.transform.position = TranlateScreenToWorld(pointerEventData.position);
+        SoundManager.instance.PlaySound(Globals.S_Seedlift);
     }
     public void OnDrag(BaseEventData data)
     {
@@ -77,7 +78,6 @@ public class Card : MonoBehaviour
         PointerEventData pointerEventData=data as PointerEventData;
         
         Collider2D [] col = Physics2D.OverlapPointAll(TranlateScreenToWorld(pointerEventData.position));
-        Debug.Log(col);
         foreach (Collider2D c in col)
         {
             
@@ -87,6 +87,7 @@ public class Card : MonoBehaviour
                 curGameObject.transform.parent = c.transform;
                 curGameObject.transform.localPosition = Vector3.zero;
                 curGameObject.GetComponent<Plant>().SetPlantStart();
+                SoundManager.instance.PlaySound(Globals.S_Plant);
                 curGameObject = null;
 
                 Gamemanager.instance.ChangeSunNum(-useSun);

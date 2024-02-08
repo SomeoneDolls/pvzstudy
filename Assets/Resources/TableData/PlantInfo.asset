@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ab70df1a89df447a032fd9876833ff, type: 3}
+  m_Name: PlantInfo
+  m_EditorClassIdentifier: 
+  PlantInfoList:
+  - plantId: 0
+    plantName: "\u8C4C\u8C46\u5C04\u624B"
+    description: " \u8C4C\u8C46\u5C04\u624B\u53EF\u8C13\u4F60\u7684\u7B2C\u4E00\u9053\u9632\u7EBF\uFF0C\u4ED6\u4EEC\u671D\u6765\u72AF\u7684\u50F5\u5C38\u5C04\u51FB\u8C4C\u8C46\u3002"
+    cardPrefab: {fileID: 3644601578860841916, guid: b068538bf00022d44972007f6f9f80a8, type: 3}
+  - plantId: 1
+    plantName: "\u592A\u9633\u82B1"
+    description: "\u5411\u65E5\u8475\u662F\u4F60\u6536\u96C6\u989D\u5916\u9633\u5149\u5FC5\u4E0D\u53EF\u5C11\u7684\u690D\u7269\u3002\u4E3A\u4EC0\u4E48\u4E0D\u591A\u79CD\u4E00\u4E9B\u5462\uFF1F"
+    cardPrefab: {fileID: 7725017644472472115, guid: b6ac564cbffe2634a890b632ebaa1a19, type: 3}
+  - plantId: 2
+    plantName: "\u575A\u679C"
+    description: "\u5899\u679C\u5177\u5907\u575A\u786C\u7684\u5916\u58F3\uFF0C\u4F60\u53EF\u4EE5\u4F7F\u7528\u4ED6\u4EEC\u6765\u4FDD\u62A4\u5176\u4ED6\u690D\u7269\u3002"
+    cardPrefab: {fileID: 9112839469527379805, guid: bc1ed0deabe54f14d9ca96dcbe954552, type: 3}
+  - plantId: 3
+    plantName: "\u96EA\u82B1\u8C4C\u8C46"
+    description: "\u96EA\u82B1\u8C4C\u8C46\u53D1\u5C04\u7684\u51B0\u51BB\u8C4C\u8C46\u4E0D\u4EC5\u80FD\u591F\u4F24\u5BB3\u50F5\u5C38\uFF0C\u8FD8\u80FD\u591F\u653E\u6162\u4ED6\u4EEC\u7684\u6B65\u4F10\u3002"
+    cardPrefab: {fileID: 7638193479794169218, guid: fb8d33372ce79594985b4dc249310fb8, type: 3}

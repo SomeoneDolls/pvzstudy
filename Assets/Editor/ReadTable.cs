@@ -12,13 +12,13 @@ public class Startup
 {
     static Startup()
     {
-        string path = Application.dataPath + "/Editor/πÿø®π‹¿Ì.xlsx";
-        string assName = "Level";
+        string path = Application.dataPath + "/Editor/ÂÖ≥Âç°ÁÆ°ÁêÜ.xlsx";
+        string assName = "TableData/Level";
         FileInfo fileInfo = new FileInfo(path);
         LevelData levelData = (LevelData)ScriptableObject.CreateInstance(typeof(LevelData));
         using (ExcelPackage excelPackage = new ExcelPackage(fileInfo)) 
         {
-            ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets["Ω© ¨"];
+            ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets["ÂÉµÂ∞∏"];
             for(int i = worksheet.Dimension.Start.Row+2;i<= worksheet.Dimension.End.Row; i++)
             {
                 
@@ -26,9 +26,9 @@ public class Startup
                 Type type = typeof(LevelItem);
                 for (int j = worksheet.Dimension.Start.Column; j <= worksheet.Dimension.End.Column; j++)
                 {
-                    //Debug.Log(" ˝æ›ƒ⁄»›" + worksheet.GetValue(2, j).ToString());
+                    //Debug.Log("ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ" + worksheet.GetValue(2, j).ToString());
                     FieldInfo variable = type.GetField(worksheet.GetValue(2, j).ToString());
-                    //Debug.Log("ƒ⁄»›£∫"+variable);
+                    //Debug.Log("ÔøΩÔøΩÔøΩ›£ÔøΩ"+variable);
                     string tableValue = worksheet.GetValue(i, j).ToString();
                     variable.SetValue(levelItem, Convert.ChangeType(tableValue, variable.FieldType));
                 }

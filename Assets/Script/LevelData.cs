@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+[CreateAssetMenu(menuName = "SomeoneDolls/LevelData",fileName ="LevelData",order =3)]
 public class LevelData : ScriptableObject
 {
     public List<LevelItem> LevelDataList = new List<LevelItem>();
@@ -17,3 +17,4 @@ public class LevelItem
     public int zombieType;
     public int bornPos;
 }
+

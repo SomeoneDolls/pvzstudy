@@ -27,8 +27,10 @@ public class PeaShooter : Plant
         time += Time.deltaTime;
         if(time >= interval)
         {
+            SoundManager.instance.PlaySound(Globals.S_Shoot);
             time = 0;
             Instantiate(bullet, bulletPos.position, Quaternion.identity);
+            
         }
         if (HP <= 0)
         {

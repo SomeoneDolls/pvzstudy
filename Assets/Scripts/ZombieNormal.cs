@@ -18,6 +18,8 @@ public class ZombieNormal : MonoBehaviour
     private GameObject head;
     public float timer;
     public bool decelerate;
+    public bool LostHead;
+    private bool isDie;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +29,15 @@ public class ZombieNormal : MonoBehaviour
         currentHP = HP;
         head = transform.Find("Head").gameObject;
         Lost = true;
+        isDie = false;
+        LostHead = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isDie)
+            return;
         timer -= Time.deltaTime;
         if (decelerate)
         {
@@ -47,7 +53,7 @@ public class ZombieNormal : MonoBehaviour
                 decelerate = false;
             }
         }
-        //¼õËÙ´úÂë
+        //ï¿½ï¿½ï¿½Ù´ï¿½ï¿½ï¿½
 
 
         if (isWork)
@@ -58,6 +64,8 @@ public class ZombieNormal : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(isDie)
+        return;
         if (collision.tag == "Plant")
         {
             isWork = false;
@@ -67,6 +75,8 @@ public class ZombieNormal : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if(isDie)
+        return;
         if (collision.tag == "Plant")
         {
 
@@ -91,6 +101,8 @@ public class ZombieNormal : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if(isDie)
+        return;
         if (collision.tag == "Plant")
         {
             isWork = true;
@@ -105,8 +117,6 @@ public class ZombieNormal : MonoBehaviour
         {
             GetComponent<BoxCollider2D>().enabled = false;
             animator.SetTrigger("Die");
-            damage = 0;
-            Destroy(gameObject, 0.8f);
         }
         if (currentHP <= 100 && Lost)
         {
@@ -121,5 +131,10 @@ public class ZombieNormal : MonoBehaviour
         timer = 6;
         decelerate = true;
 
+    }
+    public void DieAniOver(){
+        animator.enabled = false;
+        Gamemanager.instance.ZombieDie(gameObject);
+        GameObject.Destroy(gameObject);
     }
 }
